@@ -47,7 +47,7 @@
 
 ## Embeddingsサーバ
 ### Sentence Transformer（LocalAI）
-BERT系のOpenAI API Embeddingsサーバの建て方。　　
+BERT系のOpenAI API Embeddingsサーバの建て方。  
 LocalAIを使用してSentence Transformerを実行する。
 
 1. localaiのDockerイメージからコンテナを起動
@@ -70,9 +70,10 @@ LocalAIを使用してSentence Transformerを実行する。
     ```
 
 4. /build/modelsディレクトリにモデルの設定ファイルを作成
+    モデル`intfloat/multilingual-e5-small`をモデル名`text-embedding-ada-002`で実行。
     ```
-    root@localai:/build# vi models/intfloat-multilingual-e5-small.yaml
-    name: intfloat-multilingual-e5-small
+    root@localai:/build# vi models/text-embedding-ada-002.yaml
+    name: text-embedding-ada-002
     backend: sentencetransformers
     embeddings: true
     parameters:
@@ -86,7 +87,7 @@ LocalAIを使用してSentence Transformerを実行する。
     -H "Content-Type: application/json" \
     -H "Authorization: Bearer None" \
     -d '{
-    "model": "intfloat-multilingual-e5-small",
+    "model": "text-embedding-ada-002",
     "input": "query: 夕飯はお肉です。"
     }' 
     ```
@@ -116,7 +117,7 @@ pip3 install -e .
 ```
 
 #### 実行  
-`line-corporation/japanese-large-lm-1.7b`をダウンロードして実行する例。  
+モデル`line-corporation/japanese-large-lm-1.7b`をモデル名`text-embedding-ada-002`で実行。
 
 ```
 python3 -m fastchat.serve.controller --host 0.0.0.0 2>&1 &
