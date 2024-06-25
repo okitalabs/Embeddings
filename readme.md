@@ -56,6 +56,7 @@ LocalAIを使用してSentence Transformerを実行する。
     -p 28080:8080 \
     -h local-ai --name localai localai/localai:latest-gpu-nvidia-cuda-12
     ```
+    
 
 2. コンテナにログイン
     ```
@@ -77,7 +78,7 @@ LocalAIを使用してSentence Transformerを実行する。
     backend: sentencetransformers
     embeddings: true
     parameters:
-    model: intfloat/multilingual-e5-small
+      model: intfloat/multilingual-e5-small
     ```
 
 5. ホストからAPIでEmbeddingsにアクセス
