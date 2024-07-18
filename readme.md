@@ -25,7 +25,7 @@
 
 [100.dataset_liveddor.ipynb](examples/100.dataset_liveddor.ipynb)
 
-- ライブドアニュース、9カテゴリ、各300件、計2700件、戦闘から512文字を抽出
+- ライブドアニュース、9カテゴリ、各300件、計2700件、先頭から512文字を抽出
 - HuggingFaceの[shunk031/livedoor-news-corpus](https://huggingface.co/datasets/shunk031/livedoor-news-corpus)を使用する
 - `livedoor_300.csv.zip`として保存
 
